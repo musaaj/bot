@@ -17,21 +17,23 @@ class Rectangle(t.RawTurtle):
     def move_forward(self, unit):
         self.clear()
         self.penup()
-        super().fd(unit)
+        self.fd(unit)
         self.pendown()
         self.draw()
 
     def move_backward(self, unit):
         self.clear()
         self.penup()
-        super().bk(unit)
+        self.bk(unit)
         self.pendown()
         self.draw()
 
+    def turn_right(self, angle=90):
+        self.right(angle)
+        self.clear()
+        self.draw()
 
-
-
-
-
-r = Rectangle(t.Screen(), 200, 400)
-r.draw()
+    def turn_left(self, angle=90):
+        self.left(angle)
+        self.clear()
+        self.draw()
